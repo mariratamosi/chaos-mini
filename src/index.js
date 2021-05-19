@@ -10,12 +10,12 @@ import Routes from "./Routes";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <Provider store={store}>
+    <Provider store={store}>
+      <Router>
         <App />
-      </Provider>
-      <Routes />
-    </Router>
+        <Routes />
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

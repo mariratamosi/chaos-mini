@@ -1,14 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
 import Login from "./Modules/login/component/login";
+import FeelingsList from "./Modules/feelingsDesc/component/feelingList";
 
 import "./Styles/App.scss";
 
 function App() {
-  return (
-    <div className="App">
-      <Login />
-    </div>
-  );
+  return <div className="App"></div>;
 }
 
 export default App;

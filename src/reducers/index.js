@@ -1,8 +1,10 @@
 import calculateReducer from "../reducers/calculateReducer";
+import loginReducer from "../reducers/loginReducer";
+
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-  calculator: calculateReducer,
+  user: loginReducer,
 });
 
 export default rootReducer;
