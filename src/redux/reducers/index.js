@@ -1,5 +1,5 @@
-import calculateReducer from "../reducers/calculateReducer";
-import loginReducer from "../reducers/loginReducer";
+import calculateReducer from "redux/reducers/calculateReducer";
+import loginReducer from "redux/reducers/loginReducer";
 
 import { combineReducers } from "redux";
 

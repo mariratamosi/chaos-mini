@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { submitUsername } from "Actions/LoginActions";
-import "../../../Styles/Login.scss";
+import { submitUsername } from "redux/Actions";
+import "styles/Login.scss";
 
-function Login() {
+export const Login = () => {
   const [name, setName] = useState("");
   useEffect(() => {
-    // Good!
     console.log("login mounted");
     document.title = "Chaos-mini"; // Side-effect!
   }, []);
@@ -38,6 +37,6 @@ function Login() {
       </form>
     </div>
   );
-}
+};
 
 export default Login;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Login from "../Modules/login/component/login";
-import FeelingsList from "../Modules/feelingsDesc/component/feelingList";
+import { Login } from "modules/component";
+import { FeelingsList } from "modules/component";
 
 function Routes() {
   return (
