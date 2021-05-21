@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { submitUsername } from "../../../Actions/LoginActions";
+import { submitUsername } from "Actions/LoginActions";
 import "../../../Styles/Login.scss";
 
 function Login() {
