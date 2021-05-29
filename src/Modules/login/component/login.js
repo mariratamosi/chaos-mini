@@ -64,10 +64,6 @@ export const Login = () => {
         </label>
         <input type="submit" value="Submit" />
       </form>
-      <a href="/feelings">Next</a>
-      <Link to="/feelings" className="link">
-        feelings
-      </Link>
     </div>
   );
 };

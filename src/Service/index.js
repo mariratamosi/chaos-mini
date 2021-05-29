@@ -1,1 +1,7 @@
-export { CheckAuth, SignIn, persistLoginData, getLoginData } from "./Auth";
+export {
+  CheckAuth,
+  SignIn,
+  persistLoginData,
+  getLoginData,
+  removeLoginData,
+} from "./Auth";

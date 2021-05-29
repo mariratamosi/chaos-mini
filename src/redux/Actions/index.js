@@ -1,4 +1,4 @@
 export { increment } from "./calculatorActions";
 export { decrement } from "./calculatorActions";
 
-export { addUsernameToStore } from "./LoginActions";
+export { addUsernameToStore, removeUsernameFromStore } from "./LoginActions";

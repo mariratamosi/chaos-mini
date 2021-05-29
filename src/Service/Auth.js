@@ -39,3 +39,8 @@ export const getLoginData = (userInfo) => {
   console.log("getLoginData", localStorage.getItem("userInfo"));
   return localStorage.getItem("userInfo");
 };
+
+export const removeLoginData = (userInfo) => {
+  localStorage.removeItem("userInfo");
+  localStorage.removeItem("loggedin");
+};
