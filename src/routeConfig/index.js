@@ -2,7 +2,6 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import { Login, FeelingsList, Exc } from "modules/components";
 import { ProtectedRoute } from "routeConfig/ProtectedRoute";
-import { useSelector } from "react-redux";
 
 function Routes() {
   return (

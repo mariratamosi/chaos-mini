@@ -2,19 +2,15 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addUsernameToStore } from "redux/Actions";
 import { SignIn } from "service";
-import { useHistory, Link, Redirect } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 import { persistLoginData } from "service";
-import { useSelector } from "react-redux";
-
 import "styles/Login.scss";
 
 export const Login = () => {
-  const { userInfo } = useSelector((state) => state.user);
   const [name, setName] = useState("");
   let history = useHistory();
 
   useEffect(() => {
-    console.log("login mounted");
     document.title = "Chaos-mini"; // Side-effect!
   }, []);
 
@@ -22,14 +18,12 @@ export const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name);
 
     SignIn({ username: name, pw: "" }) //business logic
       .then(function (result) {
         //add to redux store
         dispatch(addUsernameToStore(name));
 
-        console.log(userInfo);
         //store in localstore
         persistLoginData({ username: name, isLoggedIn: true });
 
@@ -37,12 +31,12 @@ export const Login = () => {
         history.replace("/feelings");
       })
       .catch(function (err) {
+        //handle error
         console.log(err);
       });
   };
 
   const handleChange = (e) => {
-    console.log(e.target.value);
     setName(e.target.value);
   };
 

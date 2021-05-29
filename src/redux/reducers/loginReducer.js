@@ -11,14 +11,12 @@ const userReducer = (state = initState, action) => {
         isLoggedIn: true,
         userName: action.payload,
       };
-      break;
     case "USER_LOGOUT":
       return {
         ...state,
         isLoggedIn: false,
         userName: "",
       };
-      break;
     default:
       return { ...state };
   }
