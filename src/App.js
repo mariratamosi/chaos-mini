@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUsernameToStore } from "redux/Actions";
+import Routes from "routeConfig";
 
 function App() {
   const userInfo = useSelector((state) => state.user);
@@ -12,18 +13,21 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log("app mounted");
     let loginData = CheckAuth(userInfo);
     console.log(loginData);
+    console.log(userInfo);
 
-    if (!loginData.status) {
-      history.replace("/login");
-    } else {
-      //add to redux store
+    if (loginData.status) {
       dispatch(addUsernameToStore(loginData.username));
     }
   }, []);
 
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Routes loggedIn={userInfo.isLoggedIn} />
+    </div>
+  );
 }
 
 export default App;

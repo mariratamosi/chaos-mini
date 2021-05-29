@@ -35,5 +35,6 @@ export const persistLoginData = (userInfo) => {
 };
 
 export const getLoginData = (userInfo) => {
+  console.log("getLoginData", localStorage.getItem("userInfo"));
   return localStorage.getItem("userInfo");
 };

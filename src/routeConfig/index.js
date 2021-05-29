@@ -1,14 +1,20 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import { Login } from "modules/components";
-import { FeelingsList } from "modules/components";
+import { Login, FeelingsList, Exc } from "modules/components";
+import { ProtectedRoute } from "routeConfig/ProtectedRoute";
+import { useSelector } from "react-redux";
 
-function Routes() {
+function Routes(props) {
   return (
     <Switch>
-      <Route exact path="/" component={Login} />
+      <Route exact path="/" component={Exc} />
       <Route exact path="/login" component={Login} />
-      <Route exact path="/feelings" component={FeelingsList} />
+      <ProtectedRoute
+        exact
+        path="/feelings"
+        loggedIn={props.loggedIn}
+        component={FeelingsList}
+      />
     </Switch>
   );
 }

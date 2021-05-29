@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addUsernameToStore } from "redux/Actions";
 import { SignIn } from "service";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { persistLoginData } from "service";
 import { useSelector } from "react-redux";
 
@@ -55,6 +55,10 @@ export const Login = () => {
         </label>
         <input type="submit" value="Submit" />
       </form>
+      <a href="/feelings">Next</a>
+      <Link to="/feelings" className="link">
+        feelings
+      </Link>
     </div>
   );
 };
