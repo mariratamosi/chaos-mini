@@ -1,1 +1,1 @@
-export { CheckAuth } from "./Auth";
+export { CheckAuth, SignIn } from "./Auth";

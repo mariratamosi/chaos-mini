@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { submitUsername } from "redux/Actions";
+import { SignIn } from "service";
 import "styles/Login.scss";
 
 export const Login = () => {
@@ -15,10 +16,12 @@ export const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(name);
-    let action = submitUsername(name);
-    console.log(action);
+    // let action = submitUsername(name);
+    // console.log(action);
+    // dispatch(action);
 
-    dispatch(action);
+    let p = SignIn(name, "");
+    console.log(p);
   };
 
   const handleChange = (e) => {
