@@ -13,15 +13,11 @@ function App() {
   useEffect(() => {
     console.log("app mounted");
 
-    const checkAuth = () => {
-      console.log("checking auth");
-      let loginData = CheckAuth();
+    let loginData = CheckAuth();
 
-      if (loginData.status) {
-        dispatch(addUsernameToStore(loginData.username));
-      }
-    };
-    checkAuth();
+    if (loginData.status) {
+      dispatch(addUsernameToStore(loginData.username));
+    }
   }, [dispatch]);
 
   return (
