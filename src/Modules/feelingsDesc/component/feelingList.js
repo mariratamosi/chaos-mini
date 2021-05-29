@@ -43,37 +43,15 @@ export const FeelingsList = () => {
           />
         );
       })}
-      {/* <Emotion
-        name="Happy"
-        id="0"
-        state={emotionsState[0]}
-        handler={emotionsHandler}
-      />
-      <Emotion
-        name="Angry"
-        id="1"
-        state={emotionsState[1]}
-        handler={emotionsHandler}
-      />
-      <Emotion
-        name="Afraid"
-        id="2"
-        state={emotionsState[2]}
-        handler={emotionsHandler}
-      />
-      <Emotion
-        name="Sad"
-        id="3"
-        state={emotionsState[3]}
-        handler={emotionsHandler}
-      />
-      <Emotion
-        name="Disgusted"
-        id="4"
-        state={emotionsState[4]}
-        handler={emotionsHandler}
-      /> */}
-      <Link to="/login" className="link">
+      <Link
+        to={{
+          pathname: "/home",
+          state: {
+            selectedEmotions: emotionsInfo.find((item) => item.state === 1),
+          },
+        }}
+        className="link"
+      >
         Continue
       </Link>
       <Logout />
