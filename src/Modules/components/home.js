@@ -5,7 +5,7 @@ export const Home = (props) => {
 
   useEffect(() => {
     console.log(state.selectedEmotions);
-  }, []);
+  }, [state.selectedEmotions]);
 
   return <div>Home page {state.selectedEmotions.name}</div>;
 };
