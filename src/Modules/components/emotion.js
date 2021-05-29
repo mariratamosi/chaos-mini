@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export const Emotion = ({ name, id, state, handler }) => {
   return (
     <div

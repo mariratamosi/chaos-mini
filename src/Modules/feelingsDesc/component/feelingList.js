@@ -15,7 +15,7 @@ export const FeelingsList = () => {
     console.log("emotionsHandler");
     setEmotionsInfo(
       emotionsInfo.map((item, index) => {
-        if (index == e.target.dataset.id) {
+        if (index === +e.target.dataset.id) {
           return {
             ...item,
             state: 1,
