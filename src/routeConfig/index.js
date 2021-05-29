@@ -4,18 +4,12 @@ import { Login, FeelingsList, Exc } from "modules/components";
 import { ProtectedRoute } from "routeConfig/ProtectedRoute";
 import { useSelector } from "react-redux";
 
-function Routes(props) {
-  console.log("routes login " + props.loggedIn + " " + new Date().getTime());
+function Routes() {
   return (
     <Switch>
       <Route exact path="/" component={Exc} />
       <Route exact path="/login" component={Login} />
-      <ProtectedRoute
-        exact
-        path="/feelings"
-        loggedIn={props.loggedIn}
-        component={FeelingsList}
-      />
+      <ProtectedRoute exact path="/feelings" component={FeelingsList} />
     </Switch>
   );
 }

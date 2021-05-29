@@ -1,11 +1,6 @@
 import { Route, Redirect } from "react-router-dom";
 
-export const ProtectedRoute = ({
-  component: Comp,
-  loggedIn,
-  path,
-  ...rest
-}) => {
+export const ProtectedRoute = ({ component: Comp, path, ...rest }) => {
   return (
     <Route
       path={path}
