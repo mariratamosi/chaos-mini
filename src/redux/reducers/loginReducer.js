@@ -5,7 +5,7 @@ const initState = {
 
 const userReducer = (state = initState, action) => {
   switch (action.type) {
-    case "SUBMIT_LOGIN_FORM":
+    case "USER_LOGIN":
       return {
         ...state,
         isLoggedIn: true,

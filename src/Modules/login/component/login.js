@@ -16,12 +16,16 @@ export const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(name);
-    // let action = submitUsername(name);
-    // console.log(action);
-    // dispatch(action);
 
-    let p = SignIn(name, "");
-    console.log(p);
+    let p = SignIn({ username: name, pw: "" });
+    p.then(function (result) {
+      console.log(result);
+      let action = submitUsername(name);
+      console.log(action);
+      dispatch(action);
+    }).catch(function (err) {
+      console.log(err);
+    });
   };
 
   const handleChange = (e) => {

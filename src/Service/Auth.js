@@ -3,10 +3,8 @@ export const CheckAuth = (userInfo) => {
 };
 
 export const SignIn = ({ username, pw }) => {
-  console.log(username);
-  let result = new Promise((resolve, reject) => {
-    console.log(username);
-    console.log(this);
+  return new Promise((resolve, reject) => {
+    //Call API if neccessary
     if (username.length === 0) {
       reject({
         status: false,
