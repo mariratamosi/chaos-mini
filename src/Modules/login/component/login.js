@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { submitUsername } from "redux/Actions";
+import { addUsernameToStore } from "redux/Actions";
 import { SignIn } from "service";
 import { useHistory } from "react-router-dom";
 import "styles/Login.scss";
@@ -22,10 +22,10 @@ export const Login = () => {
 
     SignIn({ username: name, pw: "" }) //business logic
       .then(function (result) {
-        console.log(result);
-        let action = submitUsername(name);
-        console.log(action);
-        dispatch(action);
+        //add to redux store
+        dispatch(addUsernameToStore(name));
+
+        //redirect
         history.replace("/feelings");
       })
       .catch(function (err) {
