@@ -3,9 +3,13 @@ import { useDispatch } from "react-redux";
 import { addUsernameToStore } from "redux/Actions";
 import { SignIn } from "service";
 import { useHistory } from "react-router-dom";
+import { persistLoginData } from "service";
+import { useSelector } from "react-redux";
+
 import "styles/Login.scss";
 
 export const Login = () => {
+  const { userInfo } = useSelector((state) => state.user);
   const [name, setName] = useState("");
   let history = useHistory();
 
@@ -24,6 +28,10 @@ export const Login = () => {
       .then(function (result) {
         //add to redux store
         dispatch(addUsernameToStore(name));
+
+        console.log(userInfo);
+        //store in localstore
+        persistLoginData({ username: name });
 
         //redirect
         history.replace("/feelings");

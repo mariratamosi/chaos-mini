@@ -1,5 +1,16 @@
-export const CheckAuth = (userInfo) => {
-  return userInfo.isLoggedIn;
+export const CheckAuth = () => {
+  let data = getLoginData();
+
+  if (!data) {
+    return {
+      status: false,
+    };
+  }
+
+  return {
+    status: true,
+    username: JSON.parse(data).username,
+  };
 };
 
 export const SignIn = ({ username, pw }) => {
@@ -17,4 +28,12 @@ export const SignIn = ({ username, pw }) => {
       });
     }
   });
+};
+
+export const persistLoginData = (userInfo) => {
+  localStorage.setItem("userInfo", JSON.stringify(userInfo));
+};
+
+export const getLoginData = (userInfo) => {
+  return localStorage.getItem("userInfo");
 };

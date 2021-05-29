@@ -3,17 +3,23 @@ import { useEffect } from "react";
 import React from "react";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUsernameToStore } from "redux/Actions";
 
 function App() {
   const userInfo = useSelector((state) => state.user);
-  let history = useHistory();
+  const history = useHistory();
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    let isLoggedIn = CheckAuth(userInfo);
-    console.log(isLoggedIn);
+    let loginData = CheckAuth(userInfo);
+    console.log(loginData);
 
-    if (!isLoggedIn) {
+    if (!loginData.status) {
       history.replace("/login");
+    } else {
+      //add to redux store
+      dispatch(addUsernameToStore(loginData.username));
     }
   }, []);
 
