@@ -7,6 +7,7 @@ import { useState } from "react";
 
 export const FeelingsList = () => {
   const userInfo = useSelector((state) => state.user);
+  const emotionsName = ["Happy", "Angry", "Afraid", "Sad", "Disgusted"];
   const [emotionsState, setEmotionsState] = useState([0, 0, 0, 0, 0]);
 
   const emotionsHandler = (e) => {
@@ -19,10 +20,22 @@ export const FeelingsList = () => {
       })
     );
   };
+
   return (
     <div className="feelings-desc-container">
       <h1>Hello {userInfo.userName}, how are you feeling today?</h1>
-      <Emotion
+      {emotionsName.map((item, index) => {
+        return (
+          <Emotion
+            name={item}
+            id={index}
+            key={index}
+            state={emotionsState[index]}
+            handler={emotionsHandler}
+          />
+        );
+      })}
+      {/* <Emotion
         name="Happy"
         id="0"
         state={emotionsState[0]}
@@ -47,11 +60,11 @@ export const FeelingsList = () => {
         handler={emotionsHandler}
       />
       <Emotion
-        name="Disgust"
+        name="Disgusted"
         id="4"
         state={emotionsState[4]}
         handler={emotionsHandler}
-      />
+      /> */}
       <Link to="/login" className="link">
         Continue
       </Link>
