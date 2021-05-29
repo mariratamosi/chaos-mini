@@ -5,6 +5,7 @@ import { ProtectedRoute } from "routeConfig/ProtectedRoute";
 import { useSelector } from "react-redux";
 
 function Routes(props) {
+  console.log("routes login " + props.loggedIn + " " + new Date().getTime());
   return (
     <Switch>
       <Route exact path="/" component={Exc} />

@@ -32,6 +32,7 @@ export const SignIn = ({ username, pw }) => {
 
 export const persistLoginData = (userInfo) => {
   localStorage.setItem("userInfo", JSON.stringify(userInfo));
+  localStorage.setItem("loggedin", userInfo.isLoggedIn);
 };
 
 export const getLoginData = (userInfo) => {

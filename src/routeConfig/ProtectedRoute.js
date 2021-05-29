@@ -11,7 +11,7 @@ export const ProtectedRoute = ({
       path={path}
       {...rest}
       render={(props) => {
-        return loggedIn ? (
+        return localStorage.getItem("loggedin") ? (
           <Comp {...props} />
         ) : (
           <Redirect

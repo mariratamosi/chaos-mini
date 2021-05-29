@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addUsernameToStore } from "redux/Actions";
 import { SignIn } from "service";
-import { useHistory, Link } from "react-router-dom";
+import { useHistory, Link, Redirect } from "react-router-dom";
 import { persistLoginData } from "service";
 import { useSelector } from "react-redux";
 
@@ -31,7 +31,7 @@ export const Login = () => {
 
         console.log(userInfo);
         //store in localstore
-        persistLoginData({ username: name });
+        persistLoginData({ username: name, isLoggedIn: true });
 
         //redirect
         history.replace("/feelings");
@@ -46,7 +46,16 @@ export const Login = () => {
     setName(e.target.value);
   };
 
-  return (
+  return localStorage.getItem("loggedin") ? (
+    <div>
+      <div>You are already logged in, why try again</div>
+      <Redirect
+        to={{
+          pathname: "/feelings",
+        }}
+      />
+    </div>
+  ) : (
     <div className="login-container">
       <form onSubmit={handleSubmit}>
         <label>
