@@ -4,19 +4,27 @@ import { Emotion } from "modules/components";
 import "styles/feelingsDesc.scss";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { CONSTANTS } from "utils";
 
 export const FeelingsList = () => {
   const userInfo = useSelector((state) => state.user);
-  const emotionsName = ["Happy", "Angry", "Afraid", "Sad", "Disgusted"];
-  const [emotionsState, setEmotionsState] = useState([0, 0, 0, 0, 0]);
+  const [emotionsInfo, setEmotionsInfo] = useState(CONSTANTS.EMOTIONS);
 
   const emotionsHandler = (e) => {
     console.log(e.target.dataset.id);
     console.log("emotionsHandler");
-    setEmotionsState(
-      emotionsState.map((_, index) => {
-        if (index == e.target.dataset.id) return 1;
-        return 0;
+    setEmotionsInfo(
+      emotionsInfo.map((item, index) => {
+        if (index == e.target.dataset.id) {
+          return {
+            ...item,
+            state: 1,
+          };
+        }
+        return {
+          ...item,
+          state: 0,
+        };
       })
     );
   };
@@ -24,13 +32,13 @@ export const FeelingsList = () => {
   return (
     <div className="feelings-desc-container">
       <h1>Hello {userInfo.userName}, how are you feeling today?</h1>
-      {emotionsName.map((item, index) => {
+      {emotionsInfo.map((item, index) => {
         return (
           <Emotion
-            name={item}
+            name={item.name}
             id={index}
             key={index}
-            state={emotionsState[index]}
+            state={item.state}
             handler={emotionsHandler}
           />
         );
