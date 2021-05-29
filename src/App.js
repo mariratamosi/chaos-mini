@@ -14,14 +14,15 @@ function App() {
     console.log("app mounted");
 
     const checkAuth = () => {
-      let loginData = CheckAuth(userInfo);
+      console.log("checking auth");
+      let loginData = CheckAuth();
 
       if (loginData.status) {
         dispatch(addUsernameToStore(loginData.username));
       }
     };
     checkAuth();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="App">
