@@ -1,15 +1,12 @@
-export const Emotion = ({ name, id }) => {
-  const addToSelection = (e) => {
-    console.log(e.target.dataset.id);
-    let allEmotions = document.querySelectorAll(".single-emotion");
-    console.log(allEmotions);
-    allEmotions.forEach((element) => {
-      element.classList.remove("active");
-    });
-    e.target.classList.add("active");
-  };
+import { useState } from "react";
+
+export const Emotion = ({ name, id, state, handler }) => {
   return (
-    <div className="single-emotion" data-id={id} onClick={addToSelection}>
+    <div
+      className={`single-emotion ${state ? "active" : ""}`}
+      data-id={id}
+      onClick={handler}
+    >
       {name}
     </div>
   );
