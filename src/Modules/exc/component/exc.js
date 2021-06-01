@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
+import "styles/exc.scss";
 
 export const Exc = (props) => {
   const { state = {} } = props.location;
   const { error } = state;
   return (
-    <div>
-      <h1>Chaos mini</h1>
-      {error && <div>ERROR: {error}</div>}
-      <Link to="/login" className="link">
-        Login
+    <div class="init-page">
+      <Link to="/login" className="cm-h-link">
+        Chaos
       </Link>
     </div>
   );
