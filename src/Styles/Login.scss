@@ -1,4 +1,14 @@
-body {
-  background: black;
-  color: white;
+@import "common";
+
+.login-container {
+  @include flexCenter(column);
+  height: 100%;
+}
+
+[type="text"] {
+  @include cm_placeholder(rgb(139, 139, 139), 14px);
+  border: 1px solid rgb(179, 179, 179);
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border-radius: 4px;
 }

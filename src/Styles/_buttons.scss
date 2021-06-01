@@ -78,3 +78,30 @@
     opacity: 1;
   }
 }
+
+// inputs
+.cm-input::-webkit-input-placeholder {
+  color: var(--sd-base-gray-700);
+  font-weight: 100;
+  font-size: 14px;
+} /* WebKit, Blink, Edge */
+.cm-input:-moz-placeholder {
+  color: var(--sd-base-gray-700);
+  font-weight: 100;
+  font-size: 12px;
+} /* Mozilla Firefox 4 to 18 */
+.cm-input::-moz-placeholder {
+  color: var(--sd-base-gray-700);
+  font-weight: 100;
+  font-size: 12px;
+} /* Mozilla Firefox 19+ */
+.cm-input:-ms-input-placeholder {
+  color: var(--sd-base-gray-700);
+  font-weight: 100;
+  font-size: 12px;
+} /* Internet Explorer 10-11 */
+.cm-input::-ms-input-placeholder {
+  color: var(--sd-base-gray-700);
+  font-weight: 100;
+  font-size: 12px;
+} /* Microsoft Edge */

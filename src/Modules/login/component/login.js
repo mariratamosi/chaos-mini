@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { addUsernameToStore } from "redux/Actions";
 import { SignIn } from "service";
@@ -9,9 +9,11 @@ import "styles/Login.scss";
 export const Login = () => {
   const [name, setName] = useState("");
   let history = useHistory();
+  const nameInput = useRef(null);
 
   useEffect(() => {
     document.title = "Chaos-mini"; // Side-effect!
+    nameInput.current.focus();
   }, []);
 
   const dispatch = useDispatch();
@@ -52,11 +54,13 @@ export const Login = () => {
   ) : (
     <div className="login-container">
       <form onSubmit={handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={name} onChange={handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
+        <input
+          type="text"
+          value={name}
+          onChange={handleChange}
+          placeholder="Your name?"
+          ref={nameInput}
+        />
       </form>
     </div>
   );
