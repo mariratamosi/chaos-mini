@@ -5,3 +5,5 @@ export {
   getLoginData,
   removeLoginData,
 } from "./Auth";
+
+export { getRandomQuote } from "./quotesAPI";

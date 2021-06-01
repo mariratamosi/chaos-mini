@@ -1,0 +1,9 @@
+@import "common";
+
+.home-page-1 {
+  @include flexCenter(column);
+  height: 100%;
+  h1 {
+    font-weight: 100;
+  }
+}
