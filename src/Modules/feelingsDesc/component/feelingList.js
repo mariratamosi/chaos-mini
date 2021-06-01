@@ -1,11 +1,9 @@
-import { Logout } from "modules/components";
 import { useSelector } from "react-redux";
 import { Emotion } from "modules/components";
 import "styles/feelingsDesc.scss";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import { CONSTANTS } from "utils";
-import ArrowRightOutlinedIcon from "@material-ui/icons/ArrowRightOutlined";
+import { Footer } from "modules/components";
 
 export const FeelingsList = () => {
   const userInfo = useSelector((state) => state.user);
@@ -47,19 +45,14 @@ export const FeelingsList = () => {
         })}
       </div>
       <div className="cm-btn-group"></div>
-      <Logout className="bottom-left cm-white-btn" />
-      <Link
-        to={{
-          pathname: "/home",
+      <Footer
+        continueInfo={{
+          path: "/home",
           state: {
             selectedEmotions: emotionsInfo.find((item) => item.state === 1),
           },
         }}
-        className="bottom-right cm-white-btn cm-link"
-      >
-        Continue
-        <ArrowRightOutlinedIcon />
-      </Link>
+      />
     </div>
   );
 };
