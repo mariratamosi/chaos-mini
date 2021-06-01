@@ -13,7 +13,8 @@ export const Login = () => {
 
   useEffect(() => {
     document.title = "Chaos-mini"; // Side-effect!
-    nameInput.current.focus();
+
+    if (nameInput && nameInput.current) nameInput.current.focus();
   }, []);
 
   const dispatch = useDispatch();
@@ -60,6 +61,7 @@ export const Login = () => {
           onChange={handleChange}
           placeholder="Your name?"
           ref={nameInput}
+          className="cm-input"
         />
       </form>
     </div>
