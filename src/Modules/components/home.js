@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { getRandomQuote } from "service";
+import { Footer } from "modules/components";
+
 import "styles/home.scss";
 
 export const Home = (props) => {
-  const { state = {} } = props.location;
+  // const { state = {} } = props.location;
   const [quote, setQuote] = useState({});
 
   useEffect(() => {
@@ -21,6 +23,7 @@ export const Home = (props) => {
     <div class="home-page-1">
       <h1>{quote ? quote.content : "no content!"}</h1>
       {/* Home page {state.selectedEmotions ? state.selectedEmotions.name : ""} */}
+      <Footer continueInfo={{ path: "/home", state: null }} />
     </div>
   );
 };

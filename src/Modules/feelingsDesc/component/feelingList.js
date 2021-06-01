@@ -1,4 +1,4 @@
-import { Logout } from "modules/logout/component/logout";
+import { Logout } from "modules/components";
 import { useSelector } from "react-redux";
 import { Emotion } from "modules/components";
 import "styles/feelingsDesc.scss";
