@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { removeUsernameFromStore } from "redux/Actions";
 import { useHistory } from "react-router-dom";
 import { removeLoginData } from "service";
-
+import ArrowLeftOutlinedIcon from "@material-ui/icons/ArrowLeftOutlined";
 import "styles/Login.scss";
 
 export const Logout = (props) => {
@@ -22,6 +22,7 @@ export const Logout = (props) => {
 
   return (
     <button className={props.className} onClick={handleLogout}>
+      <ArrowLeftOutlinedIcon />
       Exit
     </button>
   );

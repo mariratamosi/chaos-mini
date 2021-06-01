@@ -80,12 +80,13 @@
 }
 
 .cm-white-btn {
+  @include flexCenter(row);
   background: black;
   color: white;
   box-shadow: none;
   border: none;
   font-weight: 100;
-  font-size: 14px;
+  font-size: 20px;
   letter-spacing: 4px;
   cursor: pointer;
 }
