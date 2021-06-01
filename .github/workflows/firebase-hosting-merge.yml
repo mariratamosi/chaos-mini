@@ -18,4 +18,4 @@ jobs:
           npm install -g firebase-tools@8.13.1
           npm install
           npm run build
-          firebase deploy
+          firebase deploy --only hosting:mychaos -m "Build: ${{github.sha}} " --non-interactive --token ${{secrets.FIREBASE_TOKEN}}
