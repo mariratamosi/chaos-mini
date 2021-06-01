@@ -7,5 +7,9 @@ export const Home = (props) => {
     console.log(state.selectedEmotions);
   }, [state.selectedEmotions]);
 
-  return <div>Home page {state.selectedEmotions.name}</div>;
+  return (
+    <div>
+      Home page {state.selectedEmotions ? state.selectedEmotions.name : ""}
+    </div>
+  );
 };
