@@ -21,7 +21,3 @@ jobs:
           npm install
           npm run build
           firebase deploy
-        with:
-          firebase-token: ${{ secrets.FIREBASE_TOKEN }}
-          channelId: live
-          projectId: mychaos
