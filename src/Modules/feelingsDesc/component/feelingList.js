@@ -46,7 +46,6 @@ export const FeelingsList = () => {
           );
         })}
       </div>
-      <div className="cm-btn-group"></div>
       <Logout className="bottom-left cm-white-btn" />
       <Link
         to={{
