@@ -45,20 +45,19 @@ export const FeelingsList = () => {
           );
         })}
       </div>
-      <div className="cm-btn-group">
-        <Link
-          to={{
-            pathname: "/home",
-            state: {
-              selectedEmotions: emotionsInfo.find((item) => item.state === 1),
-            },
-          }}
-          className="link"
-        >
-          Continue
-        </Link>
-      </div>
+      <div className="cm-btn-group"></div>
       <Logout className="bottom-left cm-white-btn" />
+      <Link
+        to={{
+          pathname: "/home",
+          state: {
+            selectedEmotions: emotionsInfo.find((item) => item.state === 1),
+          },
+        }}
+        className="bottom-right cm-white-btn cm-link"
+      >
+        Continue
+      </Link>
     </div>
   );
 };
