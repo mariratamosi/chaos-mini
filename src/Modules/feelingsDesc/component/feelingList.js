@@ -32,29 +32,33 @@ export const FeelingsList = () => {
   return (
     <div className="feelings-desc-container">
       <h1>Hello {userInfo.userName}, how are you feeling today?</h1>
-      {emotionsInfo.map((item, index) => {
-        return (
-          <Emotion
-            name={item.name}
-            id={index}
-            key={index}
-            state={item.state}
-            handler={emotionsHandler}
-          />
-        );
-      })}
-      <Link
-        to={{
-          pathname: "/home",
-          state: {
-            selectedEmotions: emotionsInfo.find((item) => item.state === 1),
-          },
-        }}
-        className="link"
-      >
-        Continue
-      </Link>
-      <Logout />
+      <div className="emotions-list">
+        {emotionsInfo.map((item, index) => {
+          return (
+            <Emotion
+              name={item.name}
+              id={index}
+              key={index}
+              state={item.state}
+              handler={emotionsHandler}
+            />
+          );
+        })}
+      </div>
+      <div className="cm-btn-group">
+        <Link
+          to={{
+            pathname: "/home",
+            state: {
+              selectedEmotions: emotionsInfo.find((item) => item.state === 1),
+            },
+          }}
+          className="link"
+        >
+          Continue
+        </Link>
+      </div>
+      <Logout className="bottom-left cm-white-btn" />
     </div>
   );
 };

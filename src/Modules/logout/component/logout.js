@@ -5,7 +5,7 @@ import { removeLoginData } from "service";
 
 import "styles/Login.scss";
 
-export const Logout = () => {
+export const Logout = (props) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -20,7 +20,11 @@ export const Logout = () => {
     history.replace("/");
   };
 
-  return <button onClick={handleLogout}>Logout</button>;
+  return (
+    <button className={props.className} onClick={handleLogout}>
+      Exit
+    </button>
+  );
 };
 
 export default Logout;
