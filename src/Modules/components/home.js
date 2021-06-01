@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getRandomQuote } from "service";
 import { Footer } from "modules/components";
+import Loader from "react-loader-spinner";
 
 import "styles/home.scss";
 
@@ -8,7 +9,7 @@ export const Home = (props) => {
   // const { state = {} } = props.location;
   const [quote, setQuote] = useState({});
 
-  useEffect(() => {
+  const getQuote = () => {
     getRandomQuote()
       .then((response) => {
         console.log(response);
@@ -17,13 +18,22 @@ export const Home = (props) => {
       .catch((error) => {
         //setQuote();
       });
-  }, [setQuote]);
+  };
+
+  useEffect(() => {
+    console.log("home mounted");
+    getQuote();
+  }, []);
 
   return (
-    <div class="home-page-1">
+    <div className="home-page-1">
+      <Loader type="Rings" color="white" height={100} width={100} />
+
       <h1>{quote ? quote.content : "no content!"}</h1>
       {/* Home page {state.selectedEmotions ? state.selectedEmotions.name : ""} */}
-      <Footer continueInfo={{ path: "/home", state: null }} />
+      <Footer
+        continueInfo={{ path: "", state: null, onClickEvent: getQuote }}
+      />
     </div>
   );
 };

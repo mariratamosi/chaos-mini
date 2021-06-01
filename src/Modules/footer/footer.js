@@ -12,6 +12,7 @@ export const Footer = (props) => {
           state: props.continueInfo.state,
         }}
         className="bottom-right cm-white-btn cm-link"
+        onClick={props.continueInfo.onClickEvent}
       >
         Continue
         <ArrowRightOutlinedIcon />
