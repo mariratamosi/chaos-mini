@@ -1,9 +1,9 @@
-import { CheckAuth } from "./service";
+import { CheckAuth } from "service";
 import { useEffect } from "react";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { addUsernameToStore } from "redux/Actions";
-import Routes from "./routeConfig";
+import Routes from "routeConfig";
 
 function App() {
   const dispatch = useDispatch();
