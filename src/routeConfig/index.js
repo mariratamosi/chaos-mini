@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import { Login, FeelingsList, Exc } from "modules/components";
 import { ProtectedRoute } from "routeConfig/ProtectedRoute";
-import { Home } from "modules/components/";
+import { Home } from "modules/components";
 
 function Routes() {
   return (
