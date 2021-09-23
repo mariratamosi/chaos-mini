@@ -1,0 +1,49 @@
+@import "common";
+
+.feelings-desc-container {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+
+  h1 {
+    font-weight: 100;
+  }
+}
+
+.emotions-list {
+  @include flexCenter(column);
+  font-size: 20px;
+}
+
+.single-emotion {
+  cursor: pointer;
+  font-size: 1.5em;
+  margin: 10px 0px;
+  &:hover {
+    font-size: 1.8em;
+  }
+
+  &.active {
+    font-size: 1.8em;
+    color: red;
+  }
+}
+
+button {
+  font-family: "cm-font";
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 20px;
+  left: 10%;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 20px;
+  right: 10%;
+}
