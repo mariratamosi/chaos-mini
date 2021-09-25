@@ -12,7 +12,7 @@ export const Login = () => {
   const nameInput = useRef(null);
 
   useEffect(() => {
-    document.title = "Chaos-mini"; // Side-effect!
+    document.title = "Chaos"; // Side-effect!
 
     if (nameInput && nameInput.current) nameInput.current.focus();
   }, []);
@@ -59,7 +59,7 @@ export const Login = () => {
           type="text"
           value={name}
           onChange={handleChange}
-          placeholder="Your name?"
+          placeholder="Loui Amenda"
           ref={nameInput}
           className="cm-input"
         />

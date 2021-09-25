@@ -12,7 +12,6 @@ export const Home = (props) => {
   const getQuote = () => {
     getRandomQuote()
       .then((response) => {
-        console.log(response);
         setQuote(response.data);
       })
       .catch((error) => {
