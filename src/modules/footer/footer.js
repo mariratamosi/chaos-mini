@@ -1,6 +1,5 @@
 import { Logout } from "modules/components";
 import { Link } from "react-router-dom";
-import ArrowRightOutlinedIcon from "@material-ui/icons/ArrowRightOutlined";
 
 export const Footer = (props) => {
   return (
@@ -15,7 +14,6 @@ export const Footer = (props) => {
         onClick={props.continueInfo.onClickEvent}
       >
         Continue
-        <ArrowRightOutlinedIcon />
       </Link>
     </div>
   );
