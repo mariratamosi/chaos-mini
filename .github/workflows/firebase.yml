@@ -33,7 +33,7 @@ jobs:
       - name: npm install, build and test
         run: |
           npm install
-          npm run build
+          CI=false ./node_modules/react-scripts/bin/react-scripts.js build
       - name: Archive Build
         uses: actions/upload-artifact@v2
         with:
